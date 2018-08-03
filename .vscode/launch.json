@@ -1,0 +1,56 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch on iOS",
+            "type": "nativescript",
+            "request": "launch",
+            "platform": "ios",
+            "appRoot": "${workspaceRoot}/dist",
+            "sourceMaps": true,
+            "watch": true,
+            "sourceMapPathOverrides": {
+                "webpack:///*": "${workspaceRoot}/dist/app/*"
+            }
+        },
+        {
+            "name": "Attach on iOS",
+            "type": "nativescript",
+            "request": "attach",
+            "platform": "ios",
+            "appRoot": "${workspaceRoot}/dist",
+            "sourceMaps": true,
+            "watch": false,
+            "sourceMapPathOverrides": {
+                "webpack:///*": "${workspaceRoot}/dist/app/*"
+            }
+        },
+        {
+            "name": "Launch on Android",
+            "type": "nativescript",
+            "request": "launch",
+            "platform": "android",
+            "appRoot": "${workspaceRoot}/dist",
+            "sourceMaps": true,
+            "watch": true,
+            "sourceMapPathOverrides": {
+                "webpack:///*": "${workspaceRoot}/dist/app/*"
+            }
+        },
+        {
+            "name": "Attach on Android",
+            "type": "nativescript",
+            "request": "attach",
+            "platform": "android",
+            "appRoot": "${workspaceRoot}/dist",
+            "sourceMaps": true,
+            "watch": false,
+            "sourceMapPathOverrides": {
+                "webpack:///*": "${workspaceRoot}/dist/app/*"
+            }
+        }
+    ]
+}
