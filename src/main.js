@@ -8,7 +8,7 @@ import './styles.scss';
 // Uncomment the following to see NativeScript-Vue output logs
 Vue.config.silent = false;
 
-Vue.component('RadListView', require('./RadListView'));
+import './RadListView'
 
 
 new Vue({

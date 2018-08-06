@@ -3,7 +3,7 @@
     <ActionBar class="action-bar" title="Hello world">
     </ActionBar>
 
-    <RadListView for="item in items" pullToRefresh="true" @pullToRefreshInitiated="onPullToRefreshInitiated">
+    <RadListView :items="items" pullToRefresh="true" @pullToRefreshInitiated="onPullToRefreshInitiated">
 			<ListViewLinearLayout v-tkListViewLayout scrollDirection="Vertical" />
 			<v-template name="header">
 				<StackLayout>
