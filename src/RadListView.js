@@ -69,7 +69,7 @@ Vue.registerElement('RadListView', () => require('nativescript-ui-listview').Rad
             )
     
             this.$refs.listView.setAttribute('_itemTemplateSelector', (item, index) => {
-                console.log('template selector', item)
+                // console.log('template selector', item)
                 return this.$templates.selectorFn(this.getItemContext(item, index))
             })
     
@@ -79,14 +79,16 @@ Vue.registerElement('RadListView', () => require('nativescript-ui-listview').Rad
                 // todo add other itemTypes
                 switch (itemType) {
                     case 'itemview':
-                        return this.$templates.getKeyedTemplate('default').createView()
+                        // return this.$templates.getKeyedTemplate('default').createView()
+                        return this.$templates.patchTemplate('default', this.getItemContext(null, null))
                     case 'headerview':
                         if (~availableTemplates.indexOf('header')) {
-                            return this.$templates.getKeyedTemplate('header').createView()
+                            // return this.$templates.getKeyedTemplate('header').createView()
+                            return this.$templates.patchTemplate('header', this.getItemContext(null, null))
                         }
                     case 'footerview':
                         if (~availableTemplates.indexOf('footer')) {
-                            return this.$templates.getKeyedTemplate('footer').createView()
+                            return this.$templates.patchTemplate('footer', this.getItemContext(null, null))
                         }
                 }
             })
@@ -111,6 +113,8 @@ Vue.registerElement('RadListView', () => require('nativescript-ui-listview').Rad
                 const name = args.object._itemTemplateSelector(currentItem, index, items)
                 const context = this.getItemContext(currentItem, index)
                 const oldVnode = args.view && args.view[VUE_VIEW]
+
+                // console.log('context', context)
     
                 args.view = this.$templates.patchTemplate(name, context, oldVnode)
             }

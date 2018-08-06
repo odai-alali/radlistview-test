@@ -17,12 +17,12 @@
 			</v-template>
 			<v-template>
         <StackLayout>
-          <label :text="item.Title" backgroundColor="White"></label>
+          <label v-if="item" :text="item.Title" backgroundColor="White"></label>
 				</StackLayout>
 			</v-template>
 			<v-template if="$odd">
 				<StackLayout>
-          <label :text="item.Title" backgroundColor="red"></label>
+          <label v-if="item" :text="item.Title" backgroundColor="red"></label>
 				</StackLayout>
 			</v-template>
 		</RadListView>
